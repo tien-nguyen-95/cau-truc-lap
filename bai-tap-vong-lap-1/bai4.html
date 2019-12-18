@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1=0
+        let num2=1;
+        let temp;
+        //dãy fibonacci từ 0
+        while(temp%5!=0){
+            temp=num1;
+            num1+=num2;
+            num2=temp;
+        }
+        document.write("số đầu tiên trong dãy fibonacci chia hết cho 5 là: "+temp);
+    </script>
+</body>
+</html>

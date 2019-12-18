@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Hãy Thử Đoán Xem !!!<br><br>
+    <button type="button" onclick="Play()">Chơi</button>
+    <script>
+        function Play(){
+            let min=parseInt(prompt("Bạn muốn đoán trong khoảng nào?\n Nhập Min: "));
+            let max=parseInt(prompt("Bạn muốn đoán trong khoảng nào?\n Nhập Max: "));
+            let numRamdom=Math.floor(Math.random()*(max-min+1)+min);
+            //console.log(numRamdom);
+            let count =0;
+            while(count<3){
+                let num=parseInt(prompt("Đoán số : "));
+                if(num==numRamdom){
+                    alert("Chúc Mừng !!!");
+                    break;
+                }
+                else if(num>numRamdom){
+                    alert("Bé hơn nữa ");
+                    count++;
+                }
+                else{
+                    alert("Lớn hơn nữa");
+                    count++;
+                }
+                if(count==3){
+                    alert("Game Over !!!");
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>
