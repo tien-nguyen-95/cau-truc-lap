@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Nhập số tiền ban đầu(VND):<br>
+    <input type="number" id="money" ><br><br>
+    Nhập số tháng cho vay(VND):<br>
+    <input type="number" id="month" ><br><br>
+    Nhập lãi xuất hàng tháng(VND):<br>
+    <input type="number" id="profit" placeholder="ví dụ: 1% nhập: 0.01"><br><br>
+    <button type="button" onclick="math()" >Tính tiền lãi</button>
+    <div id="result"></div>
+    <script>
+        function math(){
+            let money=parseInt(document.getElementById("money").value);
+            let month=parseInt(document.getElementById("month").value);
+            let profit=parseFloat(document.getElementById("profit").value);
+            if(money>0 && month>0 && profit>=0)//tính cả trường hợp cho vay ko lãi suất 
+            {
+                let tienlai=0;
+               for(let i=1;i<=month;i++){
+                   tienlai+=money*profit;
+                    money+=money*profit;
+               }
+               document.getElementById("result").innerHTML="Tổng tiền lãi: "+tienlai+"<br>Tổng cả vốn lẫn lãi: "+money;
+            }
+            else{
+                document.getElementById("result").innerHTML="Nhập sai!!!";
+            }
+        }
+    </script>
+</body>
+</html>
